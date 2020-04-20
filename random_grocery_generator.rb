@@ -1,4 +1,5 @@
 require_relative 'grocer'
+require 'pry'
 
 def items
 	[
@@ -55,3 +56,15 @@ coupons.each do |coupon|
 end
 
 puts "Your total is #{checkout(cart: cart, coupons: coupons)}"
+
+def find_item_by_name_in_collection(item_lookup, grocery_shelf)
+ grocery_shelf.each do |food_info|
+    food_info |key, value|
+      if key[:item] == item_lookup
+        return food_info
+      end 
+    end 
+  end
+end 
+
+
